@@ -45,7 +45,7 @@ The indexer is composed of several key components:
    PORT=3000
    ```
 
-4. Run database migrations:
+4. Run database migrations: (this part is not needed for the current version of the project as sequelize will automatically create the tables)
    ```
    npm run migrate
    ```

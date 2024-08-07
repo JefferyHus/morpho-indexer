@@ -31,6 +31,7 @@ export function toAssetsUp(shares: bigint, totalAssets: bigint, totalShares: big
   );
 }
 
+// TODO: This function must be refactored to make it more readable (it has too many parameters (9). Maximum allowed is 7.)
 export function computeLtv(
   borrowShares: bigint,
   lastTotalBorrowAssets: bigint,

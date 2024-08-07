@@ -13,7 +13,7 @@ class Market extends Model {
     public totalBorrowShares!: string;
     public lastUpdateTimestamp!: number;
     public lastRate!: string;
-    public oracleAddress!: string; // Add this line
+    public oracleAddress!: string;
   }
   
   Market.init(
@@ -27,7 +27,7 @@ class Market extends Model {
       totalBorrowShares: DataTypes.STRING,
       lastUpdateTimestamp: DataTypes.INTEGER,
       lastRate: DataTypes.STRING,
-      oracleAddress: DataTypes.STRING, // Add this line
+      oracleAddress: DataTypes.STRING,
     },
     { sequelize, modelName: 'market' }
 );
