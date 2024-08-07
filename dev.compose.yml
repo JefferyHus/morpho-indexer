@@ -1,0 +1,49 @@
+version: "3"
+services:
+  nodejs:
+    image: morpho/api
+    container_name: morpho
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - ./dist:/app/dist
+    build:
+      context: .
+      dockerfile: ./docker/dev.dockerfile
+      args:
+        - NODE_ENV=development
+        - PORT=${PORT}
+    depends_on:
+      - database
+      - redis
+  redis:
+    image: redis
+    container_name: tanpo-redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data/redis:/data
+      - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+  database:
+    image: postgres:15-alpine
+    container_name: morpho-database
+    restart: always
+    ports:
+      - ${POSTGRES_PORT}:5432
+    expose:
+      - ${POSTGRES_PORT}
+    env_file:
+      - ./docker/database/.env.database.dev
+    volumes:
+      - ./docker/database/docker-entrypoint-initdb/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/database/data:/var/lib/postgresql/data
+networks:
+  morpho-network:
+    driver: bridge

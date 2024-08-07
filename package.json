@@ -1,0 +1,36 @@
+{
+  "name": "morpho",
+  "version": "1.0.0",
+  "description": "A small ltv indexer",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "start:local:dev": "nodemon --max-old-space-size=2048 ./dist/server.js"
+  },
+  "author": "jefferyhus <jefferytutorials@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "^4.16.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "pg": "^8.12.0",
+    "sequelize": "^6.37.3",
+    "web3": "^4.11.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "@types/pg": "^8.11.6",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
