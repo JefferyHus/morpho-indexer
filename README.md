@@ -27,8 +27,8 @@ The indexer is composed of several key components:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/morpho-markets-indexer.git
-   cd morpho-markets-indexer
+   git clone https://github.com/JefferyHus/morpho-indexer
+   cd morpho-indexer
    ```
 
 2. Install dependencies:
